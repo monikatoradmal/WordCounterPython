@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: wordcounter-deployment
-  spec:
+spec:
   replicas: 1
   selector:
     matchLabels:
@@ -14,7 +14,8 @@ metadata:
     spec:
       containers:
       - name: wordcounter
-        image: WordCounterPython
+        image: wordcounterpython
+        imagePullPolicy: Never
         
 ---
 apiVersion: v1
